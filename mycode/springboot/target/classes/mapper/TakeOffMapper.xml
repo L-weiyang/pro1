@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.dao.TakeOffDao">
+
+
+    <select id="findBySearch" resultType="com.example.springboot.entity.TakeOff">
+        select `takeoff`.* from `takeoff`
+
+
+        where 1 = 1
+        <if test="search != null and search.userName != null and search.userName != ''">
+            and `takeoff`.`userName` like concat ('%', #{search.userName}, '%')
+        </if>
+        <if test="role != null and role == 2">
+            and `takeoff`.`userId` = #{userId}
+        </if>
+
+    </select>
+
+</mapper>

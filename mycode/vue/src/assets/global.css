@@ -1,0 +1,16 @@
+/**
+*要将css文件引用到main.js中，配置才算生效
+*/
+
+body{
+    /*设置距离屏幕的边距*/
+    margin: 0;
+    padding: 0;
+    /*隐藏溢出，清除浮动*/
+    /*overflow: hidden;*/
+}
+/*把所有元素变成盒装模型：应用“box-sizing:border-box;样式后，盒子border和padding的参数值是被包含width和height之内的”*/
+*{
+    /*外边距不会额外占用1px的像素*/
+    box-sizing: border-box;
+}
